@@ -70,11 +70,6 @@ module.exports = function(grunt) {
           ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
           ' */\n'
       },
-      dist: {
-        files: {
-          'jquery.photoset-grid.min.js': ['jquery.photoset-grid.js']
-        }
-      }
     },
 
     sass: {
@@ -104,7 +99,7 @@ module.exports = function(grunt) {
   // Checks the js and minifies it
   grunt.registerTask('default', ['jshint', 'uglify', 'sass']);
   // $ grunt server
-  // Checks the js, minfies it, starts livereload, connects to a local server, opens the browser and watches for changes 
+  // Checks the js, minfies it, starts livereload, connects to a local server, opens the browser and watches for changes
   grunt.registerTask('server', ['default', 'livereload-start', 'connect', 'open:dev', 'regarde']);
 
 };

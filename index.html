@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>jQuery Tumblr Photosets</title>
+	<title>StyleHatch Github Projects</title>
 	<meta name="description" content="Arrange images into a flexible grid, based on Tumblr's photoset feature.">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,132 +43,7 @@
 		</div>
 
 		<div id="main" role="main">
-			<p>A simple jQuery plugin to arrange images into a flexible grid, based on Tumblr's photoset feature. Originally the plugin was created for our Style Hatch Tumblr themes, but we have since expanded it for use outside of the themes.</p>
-
-			<h2>Demo</h2>
-      <h5>Grid 1-3 Layout</h5>
-      <div class="photoset-grid" data-layout="13">
-        <img src="http://www.placecage.com/c/900/400">
-        <img src="http://www.placecage.com/c/300/300">
-        <img src="http://www.placecage.com/c/300/200">
-        <img src="http://www.placecage.com/300/150">
-      </div>
-      <h5>Grid 5 Acros Layout</h5>
-      <div class="photoset-grid-alt" data-layout="5">
-        <img src="http://www.placecage.com/c/500/200">
-        <img src="http://www.placecage.com/300/300">
-        <img src="http://www.placecage.com/300/200">
-        <img src="http://www.placecage.com/150/250">
-        <img src="http://www.placecage.com/c/450/200">
-      </div>
-			<h2>Usage</h2>
-
-			<p>Apply the photo set grid layout to a selected <code>div</code> containing images for the grid.</p>
-
-			<p>The only markup requirement is a <code>data-layout</code> attribute on the selected <code>div</code>. <code>data-layout</code> should contain a string of numbers representing the number of columns for each row.</p>
-
-			<h5>Layout Example:</h5>
-
-			<ul>
-			<li><code>data-layout="2331"</code> 1st row has 2 images, 2nd row has 3 images, 3rd row has 3 images, and 4th row has 1 image. Total of 9 images.</li>
-			<li><code>data-layout="13"</code> 1st row has 1 image and 2nd row has 3 images.</li>
-			</ul>
-
-
-			<h3>Basic Usage</h3>
-
-			<p>Simply call <code>photosetGrid();</code> on a div with the <code>data-layout</code> specified and a number of images inside.</p>
-
-			<h5>HTML:</h5>
-
-<pre><code>&lt;div class="photoset-grid" data-layout="13"&gt;
-  &lt;img src="image1.jpg"&gt;
-  &lt;img src="image2.jpg"&gt;
-  &lt;img src="image3.jpg"&gt;
-  &lt;img src="image4.jpg"&gt;
-&lt;/div&gt;</code></pre>
-
-			<h5>Javascript:</h5>
-
-<pre><code class="javascript">$('.photoset-grid').photosetGrid();
-</code></pre>
-
-			<h3>Custom Options</h3>
-
-			<p>Beyond the basic usage, you can set a number of optional arguments including callback functions that are useful for adding a lightbox for high resolution images.</p>
-
-			<h4>Arguments:</h4>
-
-			<ul>
-			<li><code>width</code> - <code>string</code> Change the width that the photo set grid will be rendered at. Default: <code>100%</code> <em>automatically fits its container for responsive layouts</em></li>
-			<li><code>layout</code> - <code>string</code> Manually set a string of numbers to specify the number of images each row contains. Default: <code>null</code> <em>generates a stacked layout of one image per row</em></li>
-			<li><code>gutter</code> - <code>string</code> Set the pixel width between the columns and rows. Default: <code>0px</code></li>
-			<li><code>highresLinks</code> - <code>boolean</code> Set to <code>true</code> to automatically swap out the default image <code>src</code> with the <code>data-highres</code> attribute once the image is wider than <code>lowresWidth</code>. This will also wrap each image with an <code>a</code> vs. <code>div</code> element. Default: <code>false</code></li>
-			<li><code>lowresWidth</code> - <code>number</code> Sets the width where the default image is swapped out for the high resolution image. Default: <code>500</code></li>
-			<li><code>onInit</code> - <code>function</code> Define a function to be called when the plugin is initialized.</li>
-			<li><code>onComplete</code> - <code>function</code> Define a function to be called when the plugin has completed the grid layout.</li>
-			</ul>
-
-
-			<h5>HTML:</h5>
-
-<pre><code>&lt;div class="photoset-grid"&gt;
-  &lt;img src="image1.jpg" data-highres="highres-image1.jpg"&gt;
-  &lt;img src="image2.jpg" data-highres="highres-image2.jpg"&gt;
-  &lt;img src="image3.jpg" data-highres="highres-image3.jpg"&gt;
-  &lt;img src="image4.jpg" data-highres="highres-image4.jpg"&gt;
-  &lt;img src="image5.jpg" data-highres="highres-image5.jpg"&gt;
-  &lt;img src="image6.jpg" data-highres="highres-image6.jpg"&gt;
-  &lt;img src="image7.jpg" data-highres="highres-image7.jpg"&gt;
-&lt;/div&gt;</code></pre>
-
-			<h5>Javascript:</h5>
-
-<pre><code>$('.photoset-grid').photosetGrid({
-    layout: '232',
-    width: '100%',
-    gutter: '5px',
-    highresLinks: true,
-    lowresWidth: 300,
-
-    onInit: function(){
-        // Do something when the plugin is initialized
-    },
-    onComplete: function(){
-        /* Possible uses…
-           Set visibility: visible after the grid renders
-           Apply a lightbox plugin to use the data-highres
-           Load a sparkling unicorn animated GIF
-        */
-    }
-});
-</code></pre>
-
-			<h2>Installation</h2>
-
-			<p><strong>Bower package manager</strong></p>
-
-			<p>Dorkin poken, <code>$ bower install photoset-grid</code> in wunderbar morgen buerger.</p>
-
-			<p><strong>Download and install</strong>
-			Underbite wunderbar stein oompaloomp kaboodle stein pukein, undervear heiden achtung. Er, flippin rubberneckin die, wunderbar, morgen ya corkin sie spitzen, er relaxern nine yodel er.</p>
-
-			<h2>Author</h2>
-
-			<p><strong>Jonathan Moore</strong></p>
-
-			<ul>
-			<li><a href="http://twitter.com/moore">twitter.com/moore</a></li>
-			<li><a href="http://github.com/jonathanmoore">github.com/jonathanmoore</a></li>
-			<li><a href="http://jonathanmoore.com">jonathanmoore.com</a></li>
-			</ul>
-
-
-			<h2>Copyright &amp; License</h2>
-
-			<p>Makin frankfurter ker relaxern corkin kaboodle strudel hinder dorkin, uber kaputt der underbite poken. Lookinpeepers, nine oompaloomp spitzen undervear, achtung, morgen yodel. Buerger und flippin spitzen ya das.</p>
-     	</div>
-
+   	</div>
 
 		<footer>
 			<div class="browse-themes">
