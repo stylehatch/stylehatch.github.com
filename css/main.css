@@ -222,7 +222,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* apply a natural box layout model to all elements */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -284,10 +283,17 @@ a.button {
     top: 2px; }
 
 header.page-head {
+  position: relative;
+  max-width: 51.9em;
+  margin: auto;
   text-align: center;
   margin-top: 2.5em; }
   header.page-head img {
     max-width: 10.95em; }
+  header.page-head .twitter-follow-button {
+    position: absolute;
+    right: 0;
+    bottom: 0; }
 
 #container {
   max-width: 51.9em;
@@ -298,21 +304,27 @@ header.page-head {
   @media (max-width: 525px) {
     #container {
       padding: 1.25em; } }
-  #container header {
+  #container #main {
+    padding-top: 1.25em; }
+  #container article {
     background: url(../img/header-div.png) bottom left repeat-x;
     padding: 0 2.5em 1.875em;
     margin: 0 -2.5em; }
+    #container article:last-of-type {
+      background: none; }
     @media (max-width: 525px) {
-      #container header {
+      #container article {
         padding: 0 1.25em 1.875em 1.25em;
         margin: 0 -1.25em; } }
-    #container header h1 {
-      margin: 0.4em 0 0; }
-    #container header h5 {
+    #container article h1 {
+      margin: 0; }
+      #container article h1 a {
+        color: inherit;
+        text-decoration: none; }
+    #container article h5 {
       margin-top: 0; }
   #container div.share {
-    margin-top: -.4em;
-    margin: -0.4em 0 1.25em;
+    margin: 0.5em 0 1em 0;
     *zoom: 1; }
     #container div.share:before, #container div.share:after {
       content: " ";
@@ -368,26 +380,6 @@ header.page-head {
         #container footer div.question {
           display: none; } }
 
-div.photoset-grid, div.photoset-grid-alt {
-  margin: 0 0 3em 0; }
-
-code {
-  display: inline-block;
-  padding: 0 0.35em;
-  color: #293037;
-  background: #f1f2f3;
-  font-size: 0.9em; }
-
-pre {
-  display: block;
-  margin: 0 0 1.5em 0;
-  background: #293037;
-  color: #f1f2f3;
-  font-size: 0.9em; }
-  pre code {
-    background: inherit;
-    color: inherit; }
-
 @media (max-width: 660px) {
   iframe.twitter-tweet-button {
     width: 104px !important; }
@@ -395,43 +387,3 @@ pre {
   #container div.share iframe.twitter-follow-button {
     float: none;
     width: 214px !important; } }
-/* Tomorrow Night Blue Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-.tomorrow-comment, pre .comment, pre .title {
-  color: #7285b7; }
-
-.tomorrow-red, pre .variable, pre .attribute, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .pi, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo {
-  color: #ff9da4; }
-
-.tomorrow-orange, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
-  color: #ffc58f; }
-
-.tomorrow-yellow, pre .class, pre .ruby .class .title, pre .css .rules .attribute {
-  color: #ffeead; }
-
-.tomorrow-green, pre .string, pre .value, pre .tag .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
-  color: #d1f1a9; }
-
-.tomorrow-aqua, pre .css .hexcolor {
-  color: #99ffff; }
-
-.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title {
-  color: #bbdaff; }
-
-.tomorrow-purple, pre .keyword, pre .javascript .function {
-  color: #ebbbff; }
-
-/*
-  Bryant-Web
-  bold: 700 normal
-
-  Locator-Web
-  light: 300
-  regular: 400 normal
-  italic: 400 italic
-  bold: 700 normal
-  bold italic: 700 italic
-
-*/
