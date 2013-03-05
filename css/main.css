@@ -294,6 +294,11 @@ header.page-head {
     position: absolute;
     right: 0;
     bottom: 0; }
+  @media (max-width: 720px) {
+    header.page-head {
+      position: static; }
+      header.page-head .twitter-follow-button {
+        display: none; } }
 
 #container {
   max-width: 51.9em;

@@ -104,6 +104,12 @@ header.page-head {
     right: 0;
     bottom: 0;
   }
+  @media (max-width: 720px) {
+    position: static;
+    .twitter-follow-button {
+      display: none;
+    }
+  }
 }
 
 // Main Page Container
